@@ -38,6 +38,7 @@ The Problem Statement is " The Ministry of Agriculture would like to assess tren
 ## 2. Outlier Removal
 ## 3. Seasonality Detection 
 ## 4. Seasonality Removal and MSP Prices Comparison
+## 5. Flagging the Fluctuations
 
 ### Initial Data Preparation
 The preliminary data processing involved first merging the data on the commodity names, cleaned to account for differences in the way commodities have been spelt across data sources. This yields a common dataset with all relevant variables, including prices, dates, MSP, and crop season.
@@ -74,7 +75,22 @@ Thus now we use the ACF and PACF Plots to check the stationarity of our data
 and Finally the Dicky Fuller test is run to check the stationarity of the data
 
 ### Seasonality Removal and MSP Prices Comparison
-* Two functions which can be clearly seen in the Jupyter Notebook
+First we checked the stationarity of the data using steps mentioned above.
+Now we ise the statsmodel function seasonal_decompose() to see the Trend and
+Seasonality in the timeseries data.
+After ploting the curve obtained from the decompose function we clearly were able to
+get a strong Trend Line and a period of repeating data a Seasonality pattern 
+in out dataset.
+
+Now to get the deseasonalised data we create out decompose function thus
+the function **decompose ()** in the code is used to get the deseasonalised 
+prices.
+
+We have also implemented a checkModel() function to compare the residual erros obtained
+from our decompose () finftion to calculate the acf and then decide uopn additive or miltiplicative 
+model for decomposition the model with lower residuals is thus selected.
+
+* Further  the two functions which can be clearly seen in the Jupyter Notebook
     * deseasonalise_data_mod( ) - Adds the deseasonalised prices to teh existing dataset
     * compareMSP( ) - Compares the MSP Prices , Modal Prices Raw and Deseasonalised
     These two functions need to be passed with the APMC and Commodity Cluster 
