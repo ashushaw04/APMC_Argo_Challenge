@@ -29,10 +29,10 @@ The Problem Statement is " The Ministry of Agriculture would like to assess tren
 
 * [Images](https://github.com/ashushaw04/APMC_Argo_Challenge/tree/master/Images) - Containing all   the plots generated
     
-## Methodology
+## Methodology For the Analysis
 
 > Please Note
-> (the Jupyternotebook contains the complete intuiton and the steps involved with more details about the whole process)
+> (the Jupyter Notebook contains the complete intuiton and the steps involved with more details about the whole process)
 
 ## 1. Initial Data Preparation
 ## 2. Outlier Removal
@@ -42,23 +42,25 @@ The Problem Statement is " The Ministry of Agriculture would like to assess tren
 
 ### Initial Data Preparation
 The preliminary data processing involved first merging the data on the commodity names, cleaned to account for differences in the way commodities have been spelt across data sources. This yields a common dataset with all relevant variables, including prices, dates, MSP, and crop season.
+We have further found a list of common commodities present in both our datsets i.e the "CMO_MSP_Mandi.csv" - MSP prices dataset "Monthly_data_cmo.csv" monthly mandi data. 
+Thus we now consider only those data points which present in the common commosities which has 19 unique commodities.
 
 ### Outier Removal
 Outliers are treated using standard statistical procedure, wherein all values not within the 25th to 75th percentile in the interquantile ranges are removed.
- he Images Shown Below we can clealry see a set of outliers
+ In the Images Shown Below we can clealry see a set of outliers
  
 ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Outlier%20Images/OutliersSORGUMJAWAR.png) ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Outlier%20Images/OutliersPIGEON%20PEA%20TUR.png)
 
 
 
 For Removing the ouliers we used the IQR Method thus obtained the CleanedDataset in Cleaned_APMC_monthly.csv
-for removing the outliers we need to keep in mind that each comoodity needs to be handled seperately for the removal of outliers
+For removing the outliers we need to keep in mind that each commodity needs to be handled seperately for the removal of outliers ,thus we have handled each of the commodity seperately for outlier removal.
 
 
 
 ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Outlier%20Images%20Removed/OutliersRemovedSORGUMJAWAR.png)![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Outlier%20Images%20Removed/OutliersRemovedPIGEON%20PEA%20TUR.png)
 
-Thus we have clearly removed the outliers
+Thus we have clearly removed the outliers , the cleaned dataset which contains all the common commodities is stored in Cleaned_APMC_monthly.csv .
 
 ### Seasonality Detection
 
@@ -69,10 +71,14 @@ Let us take a look at the fluctuation in Bajri prices for the Mandi Jalgaon
 
 ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/BajrijalgaonPrices.png)
 
-We can clearly see the Fluctuations
+We can clearly see the Fluctuations for the cluster Bajri and Jalgaon Mandi
 
 Thus now we use the ACF and PACF Plots to check the stationarity of our data
 and Finally the Dicky Fuller test is run to check the stationarity of the data
+
+We can also see similar trends for different clusters of APMC and Commodity.
+Some of them are shown below.
+
 
 ### Seasonality Removal and MSP Prices Comparison
 First we checked the stationarity of the data using steps mentioned above.
@@ -98,7 +104,8 @@ model for decomposition the model with lower residuals is thus selected.
     Now we can see the results on few examples below
     
   
-    ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Price%20Comparison%20Raw%20and%20DeseasonalisedSample3.jpg) ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Price%20Comparison%20Raw%20and%20DeseasonalisedSample2.jpg)
+    ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Price%20Comparison%20Raw%20and%20DeseasonalisedSample3.jpg) ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Price%20Comparison%20Raw%20and%20DeseasonalisedSample2.jpg)  ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Price%20Comparison%20Raw%20and%20DeseasonalisedSample1.jpg)  ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Price%20Comparison%20Raw%20and%20DeseasonalisedSample4.jpg)    
+    
     
     
 ### Flagging the Fluctuations
