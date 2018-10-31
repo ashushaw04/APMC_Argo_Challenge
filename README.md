@@ -36,6 +36,8 @@ The Problem Statement is " The Ministry of Agriculture would like to assess tren
 
 ## 1. Initial Data Preparation
 ## 2. Outlier Removal
+## 3. Seasonality Detection 
+## 4. Seasonality Removal and MSP Prices Comparison
 
 ### Initial Data Preparation
 The preliminary data processing involved first merging the data on the commodity names, cleaned to account for differences in the way commodities have been spelt across data sources. This yields a common dataset with all relevant variables, including prices, dates, MSP, and crop season.
