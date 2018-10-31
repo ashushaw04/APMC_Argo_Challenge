@@ -34,6 +34,9 @@ The Problem Statement is " The Ministry of Agriculture would like to assess tren
 > Please Note
 > (the Jupyternotebook contains the complete intuiton and the steps involved with more details about the whole process)
 
+## 1. Initial Data Preparation
+## 2. Outlier Removal
+
 ### Initial Data Preparation
 The preliminary data processing involved first merging the data on the commodity names, cleaned to account for differences in the way commodities have been spelt across data sources. This yields a common dataset with all relevant variables, including prices, dates, MSP, and crop season.
 
