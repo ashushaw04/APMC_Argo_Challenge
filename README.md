@@ -32,7 +32,7 @@ The Problem Statement is " The Ministry of Agriculture would like to assess tren
 ## Methodology For the Analysis
 
 > Please Note
-> (the Jupyter Notebook contains the complete intuiton and the steps involved with more details about the whole process)
+> (The Jupyter Notebook contains the complete intuiton and the steps involved with more details about the whole process and the code)
 
 ## 1. Initial Data Preparation
 ## 2. Outlier Removal
