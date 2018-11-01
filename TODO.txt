@@ -1,0 +1,4 @@
+The taks to be done further :
+
+1. Add Bokeh and Plotly plots for interactive visualisations.
+2. Add a more comprehnsive Documenatation. 
