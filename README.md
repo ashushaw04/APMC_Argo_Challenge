@@ -76,32 +76,37 @@ We can clearly see the Fluctuations for the cluster Bajri and Jalgaon Mandi
 Thus now we use the ACF and PACF Plots to check the stationarity of our data
 and Finally the Dicky Fuller test is run to check the stationarity of the data
 
-We can also see similar trends for different clusters of APMC and Commodity.
-Some of them are shown below.
+> Thus we look for other Clusters too which have sufficent data for which a time series plot can be created .
+> Thus see similar trends for different clusters of APMC and Commodity.
+> Some of them are shown below.
 
 
 ### Seasonality Removal and MSP Prices Comparison
+
 First we checked the stationarity of the data using steps mentioned above.
-Now we ise the statsmodel function seasonal_decompose() to see the Trend and
+Now we use the statsmodel function seasonal_decompose() to see the Trend and
 Seasonality in the timeseries data.
+
+ ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/DecomposeMul.PNG)
+
 After ploting the curve obtained from the decompose function we clearly were able to
-get a strong Trend Line and a period of repeating data a Seasonality pattern 
-in out dataset.
+get a strong Trend Line and a period of repeating data , a Seasonality pattern 
+in out dataset which is clearly visible woth a frequncy of 3 months.
 
-Now to get the deseasonalised data we create out decompose function thus
-the function **decompose ()** in the code is used to get the deseasonalised 
-prices.
+Now to get the deseasonalised data we create our own decompose function thus
+the function **decompose( )** in the code is used to get the deseasonalised 
+prices , this function is based on the existing seasonal_decompose() function of the statsmodel class
 
-We have also implemented a checkModel() function to compare the residual erros obtained
-from our decompose () finftion to calculate the acf and then decide uopn additive or miltiplicative 
+We have also implemented a **checkModel( )** function to compare the residual errors obtained
+from our decompose () function to calculate the ACF and then decide upon additive or multiplicative 
 model for decomposition the model with lower residuals is thus selected.
 
 * Further  the two functions which can be clearly seen in the Jupyter Notebook
-    * deseasonalise_data_mod( ) - Adds the deseasonalised prices to teh existing dataset
+    * deseasonalise_data_mod( ) - Adds the deseasonalised modal prices to the existing dataset
     * compareMSP( ) - Compares the MSP Prices , Modal Prices Raw and Deseasonalised
     These two functions need to be passed with the APMC and Commodity Cluster 
     
-    Now we can see the results on few examples below
+    Now we can see the results on few examples below these are specifc clusters which have substantial data to plot the time series curve and obtain results which can be visualised very clearly.
     
   
     ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Price%20Comparison%20Raw%20and%20DeseasonalisedSample3.jpg) ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Price%20Comparison%20Raw%20and%20DeseasonalisedSample2.jpg)  ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Price%20Comparison%20Raw%20and%20DeseasonalisedSample1.jpg)  ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Price%20Comparison%20Raw%20and%20DeseasonalisedSample4.jpg)    
