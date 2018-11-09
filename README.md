@@ -47,6 +47,9 @@ Thus we now consider only those data points which present in the common commosit
 
 ### Outier Removal
 Outliers are treated using standard statistical procedure, wherein all values not within the 25th to 75th percentile in the interquantile ranges are removed.
+![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/598px-Boxplot_vs_PDF.svg.png)
+
+
  In the Images Shown Below we can clealry see a set of outliers
  
 ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Outlier%20Images/OutliersSORGUMJAWAR.png) ![alt text](https://github.com/ashushaw04/APMC_Argo_Challenge/blob/master/Images/Outlier%20Images/OutliersPIGEON%20PEA%20TUR.png)
